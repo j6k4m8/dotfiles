@@ -1,16 +1,17 @@
+set t_Co=256
 "
 "----------------------------------------------- Vundle
-set nocompatible              " be iMproved, required
-filetype off                  " required
+set nocompatible
+filetype off
 
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'kien/ctrlp.vim'
-Plugin 'git://git.wincent.com/command-t.git'
-call vundle#end()            " required
-filetype plugin indent on    " required
+Plugin 'bling/vim-airline'
+call vundle#end()
+filetype plugin indent on
 
 "
 "----------------------------------------------- GUI
@@ -23,25 +24,35 @@ set nu
 " Highlight current line:
 set cursorline
 hi CursorLine cterm=NONE ctermbg=darkgrey
+hi Cursor ctermbg=grey
 
 " Gutter color:
 hi SignColumn ctermbg=darkgrey
-hi LineNr ctermfg=darkgrey ctermbg=darkgrey
+hi LineNr ctermfg=darkgrey ctermbg=black
 
 " Tab Line colors:
 hi TabLineFill ctermfg=darkgrey ctermbg=darkgrey
-hi TabLine ctermfg=darkgrey ctermbg=darkgrey
-hi TabLineSel ctermfg=darkgrey ctermbg=grey
+hi TabLine ctermfg=darkgrey ctermbg=black
+hi TabLineSel ctermfg=cyan ctermbg=darkgrey
 
 " Status Line colors:
-hi StatusLine ctermbg=darkgrey ctermfg=darkcyan
-hi StatusLineSel ctermbg=darkgrey ctermfg=red
+" hi StatusLine ctermbg=darkgrey ctermfg=darkcyan
+" hi StatusLineSel ctermbg=darkgrey ctermfg=red
+let g:airline_theme='wombat'
+set laststatus=2
+
 
 " Border colors:
 " No border pipes:
-set fillchars+=vert:\
+set fillchars+=vert:\ 
 hi VertSplit ctermbg=darkcyan ctermfg=darkcyan
 
+let colorcolumn=80
+hi colorcolumn ctermbg=darkgrey
+
+"
+"----------------------------------------------- Utility
+noremap ,r :source ~/.vimrc<enter>
 
 "
 "----------------------------------------------- Code
