@@ -1,17 +1,17 @@
 set t_Co=256
 "
 "----------------------------------------------- Vundle
-set nocompatible
-filetype off
+" set nocompatible
+" filetype off
 
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-Plugin 'gmarik/Vundle.vim'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'kien/ctrlp.vim'
-Plugin 'bling/vim-airline'
-call vundle#end()
-filetype plugin indent on
+" set rtp+=~/.vim/bundle/Vundle.vim
+" call vundle#begin()
+" Plugin 'gmarik/Vundle.vim'
+" Plugin 'airblade/vim-gitgutter'
+" Plugin 'kien/ctrlp.vim'
+" Plugin 'bling/vim-airline'
+" call vundle#end()
+" filetype plugin indent on
 
 "
 "----------------------------------------------- GUI
