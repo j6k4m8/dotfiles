@@ -1,30 +1,30 @@
+let base16colorspace=256
 set t_Co=256
 "
-"----------------------------------------------- Vundle
-" set nocompatible
-" filetype off
+""----------------------------------------------- Vundle
+set nocompatible
+filetype off
 
-" set rtp+=~/.vim/bundle/Vundle.vim
-" call vundle#begin()
-" Plugin 'gmarik/Vundle.vim'
-" Plugin 'airblade/vim-gitgutter'
-" Plugin 'kien/ctrlp.vim'
-" Plugin 'bling/vim-airline'
-" call vundle#end()
-" filetype plugin indent on
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Plugin 'gmarik/Vundle.vim'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'kien/ctrlp.vim'
+Plugin 'bling/vim-airline'
+Plugin 'chriskempson/base16-vim'
+call vundle#end()
+filetype plugin indent on
 
 "
-"----------------------------------------------- GUI
+""----------------------------------------------- GUI
 color desert
 " Line Numbers
 set nu
 " Relative line numbers:
 "set relativenumber
-
+"
 " Highlight current line:
-set cursorline
 hi CursorLine cterm=NONE ctermbg=darkgrey
-hi Cursor ctermbg=grey
 
 " Gutter color:
 hi SignColumn ctermbg=darkgrey
@@ -38,14 +38,14 @@ hi TabLineSel ctermfg=cyan ctermbg=darkgrey
 " Status Line colors:
 " hi StatusLine ctermbg=darkgrey ctermfg=darkcyan
 " hi StatusLineSel ctermbg=darkgrey ctermfg=red
-let g:airline_theme='wombat'
+let g:airline_theme='sol'
 set laststatus=2
 
 
 " Border colors:
 " No border pipes:
-set fillchars+=vert:\ 
-hi VertSplit ctermbg=darkcyan ctermfg=darkcyan
+set fillchars+=stl:\ ,stlnc:\
+hi VertSplit ctermbg=cyan ctermfg=cyan
 
 let colorcolumn=80
 hi colorcolumn ctermbg=darkgrey
@@ -53,6 +53,7 @@ hi colorcolumn ctermbg=darkgrey
 "
 "----------------------------------------------- Utility
 noremap ,r :source ~/.vimrc<enter>
+set mouse=a
 
 "
 "----------------------------------------------- Code
@@ -79,3 +80,11 @@ noremap ," :split<enter>
 noremap ,_ <C-W>_
 noremap ,\| <C-W>\|
 noremap ,= <C-W>=
+
+
+"
+"----------------------------------------------- Gimmicky Tools
+set hlsearch
+" If your semicolon isn't working as you expect-
+" ed, this is probably why.
+nnoremap ; :
