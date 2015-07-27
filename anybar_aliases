@@ -1,0 +1,8 @@
+
+# Requires anybar (https://github.com/tonsky/AnyBar)
+function anybar { echo -n $1 | nc -4u -w0 localhost ${2:-1738}; }
+
+# Wrap a long-execution command in anybar: Turns red when you begin,
+# and then turns blue once the command finishes. That way you can go
+# do other stuff and know immediately once your command is complete.
+function anybar_wrap { anybar red && "$*" && anybar blue; }
