@@ -1,9 +1,17 @@
-
+# Why isn't this built-in?
 alias ipy="ipython"
 
+# Use like:
+#    calc "pi * 4.7"
+# You can also add imports and set variables:
+#    calc "f * y" "f = 4; y = [1,2,3]"
+#    calc "mylib.const" "" "mylib"
+# Syntax is `calc {expression} {variables} {imports}`
 function calc { echo "from math import *; import ${3:=math}; ${2:=coffee='yum'}; print $1" | python }
 
-alias ocp="cd ~/Documents/ocp/"
-
+# Replace
+#    git clone git@github.com:openconnectome/repo target_dir
+# with:
+#    ocp_clone repo target_dir
 function ocp_clone { git clone "git@github.com:openconnectome/"$* }
 
