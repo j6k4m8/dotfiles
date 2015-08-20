@@ -1,0 +1,26 @@
+alias v="vim"
+alias moshshapeu="mosh ubuntu@shapeu.co --ssh='ssh ubuntu@shapeu.co -i ~/Dropbox/keypairs/shapeu.pem'"
+alias htop="sudo htop"
+alias start_anybar="open /Users/jordan/Applications/AnyBar.app"
+
+function anybar { echo -n $1 | nc -4u -w0 localhost ${2:-1738}; }
+function abw { anybar red && $* && anybar blue; }
+
+
+note () {
+    if [[ $1 = new ]]
+        then vim `date +%y-%m-%d-%H-%M`.md
+    elif [[ $1 = last ]]
+        then vim `ls -d *(om[1])`
+    fi
+}
+
+alias ipy="ipython"
+alias s="ls"
+alias src="source ~/.zshrc"
+
+function calc { echo "from math import *; import ${3:=math}; ${2:=coffee='yum'}; print $1" | python }
+
+alias meteor_dirs="mkdir client client/templates client/javascripts client/stylesheets lib server"
+
+source ~/.ocp-aliases

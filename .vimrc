@@ -1,66 +1,90 @@
+set t_Co=256
+"
+""----------------------------------------------- Vundle
 set nocompatible
-
-" Mapping leader key
-let mapleader = ","
-
-" Turning on syntax highlighting.
-syntax on
 filetype off
+
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Plugin 'gmarik/Vundle.vim'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'kien/ctrlp.vim'
+Plugin 'bling/vim-airline'
+call vundle#end()
 filetype plugin indent on
+syntax on
+"
+""----------------------------------------------- GUI
+color desert
+" Line Numbers
+set nu
+" Relative line numbers:
+set relativenumber
+"
+" Highlight current line:
+set cursorline
+hi CursorLine cterm=NONE ctermbg=black
+hi Cursor ctermbg=grey
 
-" Enabling line numbers.
-set number
+" Gutter color:
+hi SignColumn ctermbg=darkgrey
+hi LineNr ctermfg=cyan ctermbg=black
 
-" Row/Col Highlighting.
-au WinLeave * set nocursorline nocursorcolumn
-"au WinLeave * set cursorline cursorcolumn
-set cursorline "cursorcolumn
+" Tab Line colors:
+hi TabLineFill ctermfg=darkgrey ctermbg=darkgrey
+hi TabLine ctermfg=darkgrey ctermbg=black
+hi TabLineSel ctermfg=cyan ctermbg=darkgrey
 
-" Setting up search setttings.
-set incsearch
-set hlsearch
+" Status Line colors:
+" hi StatusLine ctermbg=darkgrey ctermfg=darkcyan
+" hi StatusLineSel ctermbg=darkgrey ctermfg=red
+let g:airline_theme='molokai'
+let g:airline#extensions#tabline#left_sep = ' '
+let g:airline#extensions#tabline#left_alt_sep = '|'
+set laststatus=2
 
-" Setting up tab settings.
-set list
-set listchars=tab:»·,trail:·
 
-set expandtab
+" Border colors:
+" No border pipes:
+"set fillchars+=vert:\ 
+hi VertSplit ctermbg=darkcyan ctermfg=darkcyan
+
+let colorcolumn=80
+hi colorcolumn ctermbg=darkgrey
+
+"
+"----------------------------------------------- Utility
+noremap ,r :source ~/.vimrc<enter>
+noremap ,w :w<enter>
+autocmd BufNewFile,BufReadPost *.md set filetype=markdown
+
+
+"
+"----------------------------------------------- Code
+" Tabs are four spaces
 set tabstop=4
 set shiftwidth=4
 set softtabstop=4
+set expandtab
 
-" Handles vim temp and backup files
-silent !mkdir ~/.vim_workplace > /dev/null 2>&1
-silent !mkdir ~/.vim_workplace/backup > /dev/null 2>&1
-silent !mkdir ~/.vim_workplace/tmp > /dev/null 2>&1
-set backup
-set backupdir=~/.vim_workplace/backup
-set directory=~/.vim_workplace/tmp
+"
+"----------------------------------------------- Splits
+" Hold Ctrl and use hjkl to nav splits
+map <C-J> <C-W>j
+map <C-K> <C-W>k
+map <C-H> <C-W>h
+map <C-L> <C-W>l
 
-" Place .viminfo file in .vim_workplace
-set viminfo+=n~/.vim_workplace/.viminfo
+" Default to right- or bottom-splits
+set splitbelow
+set splitright
 
-" Force vim to read bash_profile file to be a shell file
-au BufNewFile,BufRead bash_profile set syntax=sh
-au BufNewFile,BufRead bash_profile set filetype=sh
+noremap ,% :vsplit<enter>
+noremap ," :split<enter>
+noremap ,_ <C-W>_
+noremap ,\| <C-W>\|
+noremap ,= <C-W>=
 
-" Controls visible window area.
-set scrolloff=10
-
-" Sets up a statusline - cred: Gary B.
-set laststatus=2
-set statusline=%<%f\ (%{&ft})\ %-4(%m%)%=%-19(%3l,%02c%03V%)
-
-" Enable vim tab completion
-set wildmenu
-
-set wildmode=list:longest,list:full
-
-" leader bindings
-map <Leader>m :BufExplorer<CR>
-map <Leader><Space> :noh<CR>
-map <Leader>rh xsabling the arrow keys.
-map <Left> <Nop>
-map <Right> <Nop>
-map <Up> <Nop>
-map <Down> <Nop>
+"python from powerline.vim import setup as powerline_setup
+"python powerline_setup()
+"python del powerline_setup

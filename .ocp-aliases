@@ -1,0 +1,9 @@
+
+alias ipy="ipython"
+
+function calc { echo "from math import *; import ${3:=math}; ${2:=coffee='yum'}; print $1" | python }
+
+alias ocp="cd ~/Documents/ocp/"
+
+function ocp_clone { git clone "git@github.com:openconnectome/"$* }
+
