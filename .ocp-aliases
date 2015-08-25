@@ -13,5 +13,6 @@ function calc { echo "from math import *; import ${3:=math}; ${2:=coffee='yum'};
 #    git clone git@github.com:openconnectome/repo target_dir
 # with:
 #    ocp_clone repo target_dir
+#    ocp_clone cajal cajal-ghpages # clones the CAJAL repo into the cajal-ghpages/ directory
 function ocp_clone { git clone "git@github.com:openconnectome/"$* }
 
