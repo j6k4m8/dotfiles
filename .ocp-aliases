@@ -1,3 +1,5 @@
+alias jovo="echo 'just make it happen' && sudo"
+
 # Why isn't this built-in?
 alias ipy="ipython"
 
@@ -5,7 +7,7 @@ alias ipy="ipython"
 #    calc "pi * 4.7"
 # You can also add imports and set variables:
 #    calc "f * y" "f = 4; y = [1,2,3]"
-#    calc "mylib.const" "" "mylib"
+#    calc "mylib.const * g" "g = 9.8" "mylib"
 # Syntax is `calc {expression} {variables} {imports}`
 function calc { echo "from math import *; import ${3:=math}; ${2:=coffee='yum'}; print $1" | python }
 
