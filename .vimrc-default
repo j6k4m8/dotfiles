@@ -1,0 +1,86 @@
+set t_Co=256
+"
+""----------------------------------------------- Vundle
+set nocompatible
+filetype off
+
+"set rtp+=~/.vim/bundle/Vundle.vim
+"call vundle#begin()
+"Plugin 'gmarik/Vundle.vim'
+""Plugin 'airblade/vim-gitgutter'
+"Plugin 'kien/ctrlp.vim'
+"Plugin 'bling/vim-airline'
+"call vundle#end()
+filetype plugin indent on
+syntax on
+"
+""----------------------------------------------- GUI
+color desert
+" Line Numbers
+set nu
+" Relative line numbers:
+" set relativenumber
+"
+" Highlight current line:
+set cursorline
+hi CursorLine cterm=NONE ctermbg=black
+hi Cursor ctermbg=grey
+
+" Gutter color:
+hi SignColumn ctermbg=darkgrey
+hi LineNr ctermfg=cyan ctermbg=black
+
+" Tab Line colors:
+hi TabLineFill ctermfg=darkgrey ctermbg=darkgrey
+hi TabLine ctermfg=darkgrey ctermbg=black
+hi TabLineSel ctermfg=cyan ctermbg=darkgrey
+
+" Status Line colors:
+" hi StatusLine ctermbg=darkgrey ctermfg=darkcyan
+" hi StatusLineSel ctermbg=darkgrey ctermfg=red
+let g:airline_theme='molokai'
+let g:airline#extensions#tabline#left_sep = ' '
+let g:airline#extensions#tabline#left_alt_sep = '|'
+set laststatus=2
+
+
+" Border colors:
+" No border pipes:
+"set fillchars+=vert:\ 
+hi VertSplit ctermbg=darkcyan ctermfg=darkcyan
+
+let colorcolumn=80
+hi colorcolumn ctermbg=black
+
+"
+"----------------------------------------------- Utility
+noremap ,r :source ~/.vimrc<enter>
+noremap ,w :w<enter>
+autocmd BufNewFile,BufReadPost *.md set filetype=markdown
+
+
+"
+"----------------------------------------------- Code
+" Tabs are four spaces
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
+set expandtab
+
+"
+"----------------------------------------------- Splits
+" Hold Ctrl and use hjkl to nav splits
+map <C-J> <C-W>j
+map <C-K> <C-W>k
+map <C-H> <C-W>h
+map <C-L> <C-W>l
+
+" Default to right- or bottom-splits
+set splitbelow
+set splitright
+
+noremap ,% :vsplit<enter>
+noremap ," :split<enter>
+noremap ,_ <C-W>_
+noremap ,\| <C-W>\|
+noremap ,= <C-W>=
