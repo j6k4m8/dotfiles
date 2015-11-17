@@ -1,5 +1,5 @@
 # First, we need to install a few things...
-sudo apt-get install zsh mosh htop tmux
+sudo apt-get install git zsh mosh htop tmux
 
 # Now install oh-my-zsh.
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
