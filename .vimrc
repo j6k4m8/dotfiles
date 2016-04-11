@@ -1,25 +1,10 @@
 set t_Co=256
-"
-""----------------------------------------------- Vundle
-set nocompatible
-filetype off
-
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-Plugin 'gmarik/Vundle.vim'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'kien/ctrlp.vim'
-Plugin 'bling/vim-airline'
-call vundle#end()
-filetype plugin indent on
 syntax on
 "
 ""----------------------------------------------- GUI
 color desert
 " Line Numbers
 set nu
-" Relative line numbers:
-set relativenumber
 "
 " Highlight current line:
 set cursorline
@@ -34,14 +19,6 @@ hi LineNr ctermfg=cyan ctermbg=black
 hi TabLineFill ctermfg=darkgrey ctermbg=darkgrey
 hi TabLine ctermfg=darkgrey ctermbg=black
 hi TabLineSel ctermfg=cyan ctermbg=darkgrey
-
-" Status Line colors:
-" hi StatusLine ctermbg=darkgrey ctermfg=darkcyan
-" hi StatusLineSel ctermbg=darkgrey ctermfg=red
-let g:airline_theme='molokai'
-let g:airline#extensions#tabline#left_sep = ' '
-let g:airline#extensions#tabline#left_alt_sep = '|'
-set laststatus=2
 
 
 " Border colors:
