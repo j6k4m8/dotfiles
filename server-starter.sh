@@ -1,11 +1,16 @@
-# First, we need to install a few things...
-sudo apt-get install git zsh mosh htop tmux
+# Install some tools
+sudo apt-get install -y zsh tmux htop wget mosh git
 
-# Now install oh-my-zsh.
-sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+# Configure git
+git config --global user.name "Jordan Matelsky"
+git config --global user.email "jordan@matelsky.com"
 
-# Now download a vimrc.
-wget https://raw.githubusercontent.com/j6k4m8/dotfiles/master/.vimrc-default -o ~/.vimrc
+# Download vimrc and tmux config
+wget https://raw.githubusercontent.com/j6k4m8/dotfiles/master/.tmux.conf -O ~/.tmux.conf
+wget https://raw.githubusercontent.com/j6k4m8/dotfiles/master/.vimrc -O ~/.vimrc
 
-# The same with a tmux.conf:
-wget https://raw.githubusercontent.com/j6k4m8/dotfiles/master/.tmux.conf -o ~/.tmux.conf
+# Install oh-my-zsh
+curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
+
+# Install meteor... disabled.
+# curl https://install.meteor.com | sh
