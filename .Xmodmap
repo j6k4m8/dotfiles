@@ -1,0 +1,3 @@
+!Turn Caps Lock into a forward-delete
+remove Lock = Caps_Lock
+keysym Caps_Lock = Delete
